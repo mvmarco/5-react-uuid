@@ -6,9 +6,8 @@ function CreateTweet({textInput, setTextInput, tweets, setTweets}) {
   };
   function submitTweetHandler(e) {
     e.preventDefault();
-    setTweets([...tweets, textInput]);
+    setTweets([...tweets, { message: textInput }]);
     setTextInput("");
-
   }
   return (
     <form onSubmit={submitTweetHandler}>

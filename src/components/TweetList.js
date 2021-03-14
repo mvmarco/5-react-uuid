@@ -8,7 +8,12 @@ function TweetList({ name, tweets, setName, setTweets }) {
     <div className="tweet-list">
       <button onClick={changeName}> BUTTTON CHANGE ALL THE NAMES</button>
       {tweets.map(tweet => (
-        <Tweet setTweets={setTweets} tweets={tweets} name={name} status='Active' tweet={tweet} />
+        <Tweet 
+          setTweets={setTweets} 
+          tweets={tweets} 
+          name={name} 
+          status='Active' 
+          tweet={tweet.message} />
       ))}
 
     </div>
