@@ -29,6 +29,24 @@
      the state updates not anymore as an item of array but an as an object
   4. other than {message: textInput} we pass the uuid function as follow:
      {message: textInput, id: uuidv4()}
+  5. Important, in "TweetList.js" under <Tweet tweet={tweet} /> this refers to each object
+     so in "Tweet.js" we need to first first do find the actual message:
+     <h3>Message: {tweet.message} </h3>
+  5. in Tweets.js we have to fix the delete function too, in a way that we filter the tweets
+     array of objects taking each item (object) and get the id from it, like:
+     const deleteTweet = () => {
+      setTweets(tweets.filter((item) => item.id !== tweet.id));
+     }
+  6. To avoid to delete just the "id" of the message. We have to associate the ID to the "tweet"
+     item itself in TweetList.js as follow: 
+     <Tweet 
+      setTweets={setTweets} 
+      tweets={tweets} 
+      name={name} 
+      status='Active' 
+      tweet={tweet} 
+      key={tweet.id} ******************'
+     />
   */
 
 import './App.css';

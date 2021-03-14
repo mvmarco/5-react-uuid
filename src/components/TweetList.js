@@ -13,7 +13,9 @@ function TweetList({ name, tweets, setName, setTweets }) {
           tweets={tweets} 
           name={name} 
           status='Active' 
-          tweet={tweet.message} />
+          tweet={tweet} 
+          key={tweet.id}
+          />
       ))}
 
     </div>
