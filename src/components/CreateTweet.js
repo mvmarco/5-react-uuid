@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from 'uuid';
 function CreateTweet({textInput, setTextInput, tweets, setTweets}) {
   // the states here are lifted to the App
   // functions
@@ -6,7 +7,7 @@ function CreateTweet({textInput, setTextInput, tweets, setTweets}) {
   };
   function submitTweetHandler(e) {
     e.preventDefault();
-    setTweets([...tweets, { message: textInput }]);
+    setTweets([...tweets, { message: textInput, id: uuidv4() }]);
     setTextInput("");
   }
   return (

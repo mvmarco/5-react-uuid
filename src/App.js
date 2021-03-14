@@ -18,7 +18,7 @@
   1. you gotta go here: https://www.npmjs.com/package/uuid and run in the terminal:
      npm install uuid
   2. import { v4 as uuidv4 } from 'uuid'; where you need it. In out case it would be in
-     "CreateTweet.js"
+     "CreateTweet.js". Just to mention the "as" it is a renaming v4 as whatever we want.
   3. Since now, the tweets is an array with each tweet as mentioned here in "App.js":
      const [tweets, setTweets] = useState([]);
      What we need to do is to create an array of objects, so we go were we defined the 
@@ -27,6 +27,8 @@
      setTweets([...tweets, {textInput}]);
      In a way that when we create a Tweet (check the console under components and clicking app)
      the state updates not anymore as an item of array but an as an object
+  4. other than {message: textInput} we pass the uuid function as follow:
+     {message: textInput, id: uuidv4()}
   */
 
 import './App.css';
